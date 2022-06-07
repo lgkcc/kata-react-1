@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .states {
+    display: flex;
+    flex-direction: column;
+    button {
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      &:active {
+        box-shadow: 0 0 2px 0 black inset;
+      }
+    }
+  }
+}

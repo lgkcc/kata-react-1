@@ -1,0 +1,91 @@
+@import '../../../var';
+
+.item {
+  border: 2px $border solid;
+  border-bottom: none;
+  padding: 5px 5px 5px 15px;
+  position: relative;
+  .todoInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .time {
+    font-size: 10px;
+    color: $border;
+    position: absolute;
+    left: 15px;
+    bottom: 5px;
+  }
+  &.active {
+    color: $active-filter;
+    font-weight: bold;
+  }
+
+  &.completed {
+    color: #000;
+    font-weight: bold;
+    text-decoration: line-through;
+  }
+
+  &:last-child {
+    border-bottom: 2px $border solid;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  &:first-child {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  &__btn {
+    margin-right: 5px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 2px 4px 2px 4px;
+    cursor: pointer;
+    transition: .15s;
+
+    &:first-child{
+      color: $btn-edit;
+      border: 2px $btn-edit solid;
+      &:hover {
+        color: #fff;
+        background: $btn-edit;
+      }
+    }
+    &:nth-child(2) {
+      color: $btn-delete;
+      border: 2px $btn-delete solid;
+
+      &:hover {
+        color: #fff;
+        background: $btn-delete;
+      }
+    }
+
+    &:last-child {
+      color: $btn-priority;
+      border: 2px $btn-priority solid;
+
+      &:hover {
+        color: #fff;
+        background: $btn-priority;
+      }
+    }
+
+    &.active {
+      &:first-child {
+        color: #fff;
+        background: $btn-edit;
+      }
+      &:last-child {
+        color: #fff;
+        background: $btn-priority;
+      }
+    }
+  }
+}
+

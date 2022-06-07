@@ -1,0 +1,55 @@
+@import "src/var";
+
+.filters {
+  display: flex;
+
+  &__input {
+    flex: 1;
+    margin-right: 2px;
+    border: 2px $border solid;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+  }
+
+  &__btn {
+    margin: 0;
+    padding: 2px 8px 2px 8px;
+    background: #fff;
+    border: 2px $border solid;
+    color: $border;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      border-left: none;
+    }
+
+    &:nth-child(2) {
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      border-right: none;
+    }
+
+    &first {
+      &:nth-child(2) {
+        background: $active-filter;
+        color: #fff;
+      }
+    }
+
+    &second {
+      &:nth-child(3) {
+        background: $active-filter;
+        color: #fff;
+      }
+    }
+
+    &third {
+      &:nth-child(4) {
+        background: $active-filter;
+        color: #fff;
+      }
+    }
+  }
+}

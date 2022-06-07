@@ -1,0 +1,29 @@
+@import "src/var";
+
+.addsTodo {
+  display: flex;
+  margin-top: 10px;
+
+  &__btn {
+    border: 2px $border solid;
+    background: #fff;
+    border-radius: 6px;
+    padding: 2px 8px 2px 8px;
+    color: $border;
+    transition: .15s;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background: $active-filter;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    margin-right: 2px;
+    border: 2px $border solid;
+    border-radius: 6px;
+    padding: 5px 10px 5px 10px;
+  }
+}
