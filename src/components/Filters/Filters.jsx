@@ -1,7 +1,7 @@
 import React from 'react';
 
-import classes from './filters.module.scss';
-import Btn from './btn';
+import classes from './Filters.module.scss';
+import ActionTodoButton from './ActionTodoButton';
 
 const Filters = ({ filter, changeFilter, inputChange, find }) => {
   return (
@@ -13,9 +13,9 @@ const Filters = ({ filter, changeFilter, inputChange, find }) => {
         value={find}
         onChange={inputChange}
       />
-      <Btn title="All" filterStatus={filter} fc={changeFilter} />
-      <Btn title="Active" filterStatus={filter} fc={changeFilter} />
-      <Btn title="Done" filterStatus={filter} fc={changeFilter} />
+      <ActionTodoButton title="All" filterStatus={filter} fc={changeFilter} />
+      <ActionTodoButton title="Active" filterStatus={filter} fc={changeFilter} />
+      <ActionTodoButton title="Done" filterStatus={filter} fc={changeFilter} />
     </div>
   );
 };

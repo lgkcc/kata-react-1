@@ -1,9 +1,9 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
-import classes from './item.module.scss';
+import classes from './ItemTodoList.module.scss';
 
-const Item = ({
+const ItemTodoList = ({
   name,
   deleteTodos,
   id,
@@ -57,4 +57,4 @@ const Item = ({
   );
 };
 
-export default Item;
+export default ItemTodoList;

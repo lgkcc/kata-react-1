@@ -1,8 +1,8 @@
 import React from 'react';
 
-import classes from './filters.module.scss';
+import classes from './Filters.module.scss';
 
-const Btn = ({ title, filterStatus, fc }) => {
+const ActionTodoButton = ({ title, filterStatus, fc }) => {
   let backgroundColor;
   if (filterStatus === 'All') {
     backgroundColor = `${classes.filters__btn} ${classes.filters__btnfirst}`;
@@ -19,4 +19,4 @@ const Btn = ({ title, filterStatus, fc }) => {
   );
 };
 
-export default Btn;
+export default ActionTodoButton;

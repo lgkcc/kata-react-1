@@ -1,9 +1,9 @@
 import React from 'react';
 
-import classes from './todo.module.scss';
-import Item from './itemTodo/item';
+import classes from './TodoList.module.scss';
+import ItemTodoList from './ItemTodoList/ItemTodoList';
 
-const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, updateInput, update }) => {
+const TodoList = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, updateInput, update }) => {
   return (
     <>
       {!!find && (
@@ -12,7 +12,7 @@ const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, 
             todos
               .filter((todo) => todo.name.toLowerCase().includes(find.toLowerCase()))
               .map((todo) => (
-                <Item
+                <ItemTodoList
                   priority={todo.isPriority}
                   complete={todo.isComplete}
                   name={todo.name}
@@ -31,7 +31,7 @@ const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, 
               .filter((todo) => todo.name.toLowerCase().includes(find.toLowerCase()))
               .filter((todo) => !todo.isComplete)
               .map((todo) => (
-                <Item
+                <ItemTodoList
                   name={todo.name}
                   priority={todo.isPriority}
                   complete={todo.isComplete}
@@ -50,7 +50,7 @@ const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, 
               .filter((todo) => todo.name.toLowerCase().includes(find.toLowerCase()))
               .filter((todo) => todo.isComplete)
               .map((todo) => (
-                <Item
+                <ItemTodoList
                   name={todo.name}
                   priority={todo.isPriority}
                   complete={todo.isComplete}
@@ -70,7 +70,7 @@ const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, 
         <div className={classes.todo}>
           {filter === 'All' &&
             todos.map((todo) => (
-              <Item
+              <ItemTodoList
                 name={todo.name}
                 priority={todo.isPriority}
                 complete={todo.isComplete}
@@ -88,7 +88,7 @@ const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, 
             todos
               .filter((todo) => !todo.isComplete)
               .map((todo) => (
-                <Item
+                <ItemTodoList
                   name={todo.name}
                   priority={todo.isPriority}
                   complete={todo.isComplete}
@@ -106,7 +106,7 @@ const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, 
             todos
               .filter((todo) => todo.isComplete)
               .map((todo) => (
-                <Item
+                <ItemTodoList
                   name={todo.name}
                   priority={todo.isPriority}
                   complete={todo.isComplete}
@@ -126,4 +126,4 @@ const Todo = ({ todos, deleteTodos, priorityTodos, filter, find, completeTodos, 
   );
 };
 
-export default Todo;
+export default TodoList;

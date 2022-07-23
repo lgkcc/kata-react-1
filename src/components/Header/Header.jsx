@@ -1,4 +1,4 @@
-import classes from './header.module.scss';
+import classes from './Header.module.scss';
 
 const Header = ({ todos, clearDoneTodos }) => {
   const done = todos.filter((todo) => todo.isComplete);

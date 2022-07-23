@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Header from './components/header/header';
-import Filters from './components/filters/filters';
-import Todo from './components/todo/todo';
-import AddsTodo from './components/addsTodo/addsTodo';
+import Header from './components/Header/Header';
+import Filters from './components/Filters/Filters';
+import TodoList from './components/TodoList/TodoList';
+import AddsTodo from './components/AddsTodo/AddsTodo';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -79,7 +79,7 @@ function App() {
       <div className="container">
         <Header todos={todos} clearDoneTodos={clearDoneTodos} />
         <Filters filter={filter} todos={todos} changeFilter={changeFilter} inputChange={inputChange} find={find} />
-        <Todo
+        <TodoList
           deleteTodos={deleteTodos}
           filter={filter}
           todos={todos}
