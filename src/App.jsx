@@ -88,6 +88,7 @@ function App() {
           completeTodos={completeTodos}
           updateInput={updateInput}
           update={update}
+          updateTimer={setTodos}
         />
         <AddsTodo
           todos={todos}

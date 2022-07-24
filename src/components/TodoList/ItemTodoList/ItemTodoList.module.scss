@@ -5,6 +5,24 @@
   border-bottom: none;
   padding: 5px 5px 5px 15px;
   position: relative;
+  .stopTimer, .startTimer {
+    font-size: 18px;
+    height: 18px;
+    margin-right: 0;
+    width: 18px;
+    position: relative;
+    background: none;
+    border: none;
+  }
+  .startTimer:after{
+    content: "⏸";
+    cursor: pointer;
+
+  }
+  .stopTimer:after {
+    content: "▶";
+    cursor: pointer;
+  }
   .todoInfo {
     display: flex;
     justify-content: space-between;

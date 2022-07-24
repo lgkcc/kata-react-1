@@ -3,6 +3,7 @@
 .addsTodo {
   display: flex;
   margin-top: 10px;
+  position: relative;
 
   &__btn {
     border: 2px $border solid;
@@ -18,7 +19,16 @@
       background: $active-filter;
     }
   }
-
+  .time {
+    position: absolute;
+    width: 25px;
+    height: calc(100% - 10px);
+    top: 2px;
+    left: 250px;
+    &:last-of-type{
+      left: 290px;
+    }
+  }
   &__input {
     flex: 1;
     margin-right: 2px;

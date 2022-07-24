@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classes from './AddsTodo.module.scss';
 
 const AddsTodo = ({ todos, setTodos, update, confirmUpdate, valueInput, setValueInput, inputRef }) => {
+  const [min, setMin] = useState('');
+  const [sec, setSec] = useState('');
   const inputChange = (e) => setValueInput(e.target.value);
   const addTodo = () => {
     if (valueInput.trim().length === 0) {
@@ -15,6 +17,10 @@ const AddsTodo = ({ todos, setTodos, update, confirmUpdate, valueInput, setValue
         isComplete: false,
         id,
         date: new Date(),
+        timer: {
+          sec,
+          min,
+        },
       };
       setTodos([...todos, todo]);
       setValueInput('');
@@ -35,8 +41,23 @@ const AddsTodo = ({ todos, setTodos, update, confirmUpdate, valueInput, setValue
         className={classes.addsTodo__input}
         type="text"
         placeholder="Whats need to be done?"
+        maxLength={14}
         value={valueInput}
         onChange={inputChange}
+      />
+      <input
+        type="text"
+        className={classes.time}
+        placeholder="min"
+        value={min}
+        onChange={(e) => setMin(e.target.value)}
+      />
+      <input
+        type="text"
+        className={classes.time}
+        placeholder="sec"
+        value={sec}
+        onChange={(e) => setSec(e.target.value)}
       />
       <button type="button" className={classes.addsTodo__btn} onClick={update.isUpdate ? updateTodo : addTodo}>
         {update.isUpdate ? 'Update' : 'Add'}
